@@ -10,7 +10,6 @@
         <section id="Katalog">
             <h2>💄 Layanan Tersedia</h2>
 
-            {{-- FILTER & SORT --}}
             <div class="katalog-topbar">
                 <input type="text" id="katalog-search" class="inv-search"
                     placeholder="🔍 Cari layanan...">

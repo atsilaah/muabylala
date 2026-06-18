@@ -3,7 +3,7 @@
 @section('content')
 <section class="hero">
     <h2>Create Account ✨</h2>
-    <p>Register to start managing customers</p>
+    <p>Makeup Artist by Lala</p>
 </section>
 <section class="container">
     <main>

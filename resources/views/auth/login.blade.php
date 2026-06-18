@@ -2,8 +2,8 @@
 
 @section('content')
 <section class="hero">
-    <h2>Makeup Artist by Lala</h2>
-    <p>Login to manage your customers</p>
+    <h2>Login ✨</h2>
+    <p>Makeup Artist by Lala</p>
 </section>
 <section class="container">
     <main>
