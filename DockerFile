@@ -1,0 +1,29 @@
+FROM php:8.3-cli
+
+# Install ekstensi PHP yang umum dibutuhkan Laravel
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /app
+
+# Copy seluruh project
+COPY . .
+
+# Install dependency PHP (production, tanpa dev dependencies)
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+# Permission untuk storage & cache (Laravel butuh ini writable)
+RUN chmod -R 775 storage bootstrap/cache
+
+EXPOSE 8080
+
+# Jalankan PHP built-in server dengan document root ke public/
+CMD php -d variables_order=EGPCS -S 0.0.0.0:${PORT:-8080} -t public public/index.php
