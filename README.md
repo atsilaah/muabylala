@@ -11,7 +11,7 @@ Persyaratan Sistem
 
 Instalasi
 1. Clone Repository
-bashgit clone https://github.com/username/nama-repo.git
+bashgit clone https://github.com/atsilaah/muabylala 
 cd nama-repo
 
 2. Install Dependensi PHP
